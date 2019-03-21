@@ -1,0 +1,15 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. It contains transformations of the german "ADT /GEKID Datensatz" . 
+
+```{r}
+library(flatxml)
+adt<-fxml_importXMLFlat("ADT_GEKID_v2.1.1.xsd")
+head(adt)
+
+dataelements<-fxml_toDataFrame(adt,siblings.of = 72)
+```
+
